@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Keep workspace datasets and generated experiment artifacts out of this app-only repository.
+Breast Cncer Project/
+Breast part 2/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db

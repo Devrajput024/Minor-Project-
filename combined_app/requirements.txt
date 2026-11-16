@@ -1,0 +1,13 @@
+# The app reuses the source projects' local inference dependencies.
+fastapi>=0.110
+uvicorn>=0.27
+python-multipart>=0.0.9
+pandas==3.1.1
+numpy==2.4.6
+scikit-learn==1.9.1
+joblib==1.6.0
+# Imaging inference dependencies (install a compatible PyTorch build for your device).
+torch>=2.0.0
+torchvision>=0.15.0
+Pillow>=9.5.0
+matplotlib>=3.7.0

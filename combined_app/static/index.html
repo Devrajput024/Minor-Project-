@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f6f5">
+  <title>OncoLens | Research Platform</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318313f'/%3E%3Cpath d='M28 12h8v16h16v8H36v16h-8V36H12v-8h16z' fill='%23fafbfa'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/theme.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#home" aria-label="OncoLens Research Platform home"><span class="brand-mark">+</span><span>Onco<span class="brand-light">Lens</span><small>RESEARCH PLATFORM</small></span></a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <nav id="primary-navigation" aria-label="Primary navigation"><a class="active" href="#home">Overview</a><a href="#imaging">Imaging</a><a href="#omics">Multi-Omics</a><a href="#research">Research Notes</a></nav>
+    <span class="live-pill"><i></i> LOCAL WORKSPACE</span>
+  </header>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-text"><div class="eyebrow"><span class="eyebrow-line"></span> INDEPENDENT RESEARCH MODULES</div>
+        <h1>AI-Driven Breast Cancer Analysis Using Imaging and Multi-Omics</h1>
+        <p class="hero-subtitle">An integrated research platform exploring medical image classification and molecular data analysis through machine learning.</p>
+        <div class="hero-tags"><span>Medical imaging</span><span>Multi-omics pipelines</span><span>Research use only</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-core"><span>OL</span><b>AI</b></div><i class="node node-a"></i><i class="node node-b"></i><i class="node node-c"></i><div class="art-caption">INDEPENDENT EVIDENCE<br><strong>ONE RESEARCH SPACE</strong></div></div>
+    </section>
+
+    <section class="section-head"><div><div class="eyebrow">ONCOLENS WORKSPACE</div><h2>Research, made navigable.</h2></div><p>Independent analysis paths, each with its own data, target and saved models.<br>Outputs are not combined.</p></section>
+    <section class="module-grid">
+      <a class="module-card imaging-card" href="#imaging"><div class="card-top"><span class="module-icon">◉</span><span class="module-number">01 / IMAGING</span></div><div class="module-visual scan-visual"><div class="scan-ring"></div><span class="scan-cross">+</span><span class="visual-label">IMAGE<br>ANALYSIS</span></div><div class="module-copy"><h3>Medical Imaging Analysis</h3><p>Analyse supported medical images using trained deep learning classifiers and independent modality verification.</p><div class="module-tags"><span>Ultrasound</span><span>Histopathology</span></div><span class="module-link">Explore Imaging <span aria-hidden="true">→</span></span></div></a>
+      <a class="module-card omics-card" href="#omics"><div class="card-top"><span class="module-icon molecule">⌘</span><span class="module-number">02 / MOLECULAR</span></div><div class="module-visual molecule-visual"><div class="molecule-line"></div><i class="atom a1"></i><i class="atom a2"></i><i class="atom a3"></i><i class="atom a4"></i><i class="atom a5"></i><span class="visual-label">FOUR<br>OMICS</span></div><div class="module-copy"><h3>Multi-Omics Analysis</h3><p>Explore CNV, RNA, mutation and protein feature groups using saved machine learning prediction pipelines.</p><div class="module-tags"><span>CNV</span><span>RNA</span><span>Mutation</span><span>Protein</span></div><span class="module-link">Explore Multi-Omics <span aria-hidden="true">→</span></span></div></a>
+    </section>
+
+    <section id="imaging" class="workspace-section">
+      <div class="section-kicker"><span>01</span><div><div class="eyebrow">MEDICAL IMAGING ANALYSIS</div><h2>Imaging Analysis</h2><p class="section-description">Verify image modality, review model output and explore saved evaluation evidence.</p></div><span class="section-rule"></span></div>
+      <div class="split-layout">
+        <div class="panel upload-panel"><div class="panel-heading"><div><span class="step">STEP 01</span><h3>Upload a medical image</h3><p>Choose the expected modality. An independent detector verifies it before prediction.</p></div><span class="panel-symbol">＋</span></div>
+          <div class="modality-select"><label for="modality">EXPECTED MODALITY</label><select id="modality"><option value="ultrasound">Ultrasound</option><option value="histopathology">Histopathology</option></select></div>
+          <label class="dropzone" id="dropzone" for="image-file"><input id="image-file" type="file" accept=".jpg,.jpeg,.png,.bmp,.tif,.tiff,.webp"><span class="upload-symbol">↑</span><strong>Drop image here or <u>browse files</u></strong><small>JPG · PNG · BMP · TIFF · WEBP &nbsp; / &nbsp; MAX 20 MB</small></label>
+          <div class="image-preview hidden" id="image-preview"><img id="preview-img" alt="Uploaded image preview"><div><strong id="preview-name">—</strong><span id="preview-dims">—</span><span class="verify-state" id="verify-state">Waiting for verification</span></div></div>
+          <button class="button primary full" id="predict-image" disabled>Verify and analyse <span>→</span></button>
+          <div class="inline-status" id="image-status" aria-live="polite"></div>
+        </div>
+        <div class="panel result-panel"><div class="panel-heading"><div><span class="step">MODEL OUTPUT</span><h3>Analysis result</h3><p>Output from the selected saved classifier.</p></div><span class="status-chip">RESEARCH</span></div>
+          <div class="empty-result" id="image-empty"><div class="empty-icon">⌁</div><strong>Ready when you are</strong><span>Upload an image to see its verification and model output.</span></div>
+          <div id="image-result" class="hidden"></div>
+          <div class="model-footnote"><span>i</span><p>Not a diagnosis. The detector is a gate for supported image types; it does not establish clinical validity.</p></div>
+        </div>
+      </div>
+      <div class="metric-strip" id="image-metrics"><div class="metric-intro"><span class="step">PRESERVED BASELINES</span><strong>Existing test results</strong><small>Source project evaluation</small></div><div class="loading">Loading model information…</div></div>
+      <div class="imaging-detail-grid">
+        <article class="panel detail-card"><div class="detail-heading"><span class="detail-icon">✓</span><div><span class="step">UPLOAD SAFETY</span><h3>Image Verification</h3></div></div><div id="verification-details" class="detail-content"><p class="detail-placeholder">Select an image to inspect format, dimensions, detector result, and validation status.</p></div></article>
+        <article class="panel detail-card"><div class="detail-heading"><span class="detail-icon interpretation-icon">↗</span><div><span class="step">MODEL OUTPUT</span><h3>AI Prediction Interpretation</h3></div></div><div id="prediction-interpretation" class="detail-content"><p class="detail-placeholder">The model score comparison and distance to its decision boundary will appear after prediction.</p></div></article>
+      </div>
+      <article class="panel gradcam-panel"><div class="panel-heading"><div><span class="step">EXPLAINABILITY</span><h3>Grad-CAM visualisation</h3><p>Generated for the predicted class using the active ResNet-18 checkpoint.</p></div><span class="status-chip">LAYER4 · CONV2</span></div><div id="gradcam-content" class="gradcam-content"><p class="detail-placeholder">Run an accepted image prediction to request a Grad-CAM heatmap.</p></div></article>
+      <article class="panel model-info-panel"><div class="panel-heading"><div><span class="step">ACTIVE CHECKPOINT</span><h3>Model Information</h3></div></div><div id="model-information" class="model-info-grid"><p class="detail-placeholder">Model metadata will appear with the prediction result.</p></div></article>
+      <section id="imaging-performance" class="model-evaluation"><div class="evaluation-title"><div><span class="step">MODEL PERFORMANCE · HELD-OUT TEST</span><h3>Model Performance</h3><p id="evaluation-caption">Saved metrics for the selected preserved baseline.</p></div><div class="evaluation-actions"><label for="evaluation-select">Evaluation run</label><select id="evaluation-select"><option>Loading saved runs…</option></select><a class="report-button" id="download-evaluation-report" href="#" download>Download PDF report ↓</a></div></div><div class="evaluation-metrics" id="image-evaluation-metrics"><div class="loading">Loading saved evaluation metrics…</div></div><div class="evaluation-bottom"><div class="confusion-wrap"><h4>Confusion Matrix</h4><div id="confusion-matrix" class="confusion-matrix"></div></div><div class="roc-note" id="roc-note"></div></div><div class="evaluation-curves" id="evaluation-curves"></div><p class="research-caveat">These are held-out benchmark results for the specifically selected checkpoint and split. Historical experiment metrics are clearly separated from the active inference checkpoint. Research and educational use only.</p></section>
+    </section>
+
+    <section id="omics" class="workspace-section omics-section">
+      <div class="section-kicker"><span>02</span><div><div class="eyebrow">MOLECULAR DATA ANALYSIS</div><h2>Multi-Omics Analysis</h2><p class="section-description">Explore molecular features and analyse predicted patient vital-status outcomes using trained machine learning models.</p></div><span class="section-rule"></span></div>
+      <div class="omics-intro"><div><p>Analyse molecular feature groups and explore predicted vital-status outcomes using trained machine learning pipelines.</p><div class="target-callout"><span class="target-icon">◎</span><span><small>PREDICTION TARGET</small><strong>Recorded vital status</strong><b>0 = Alive&nbsp;&nbsp; / &nbsp;&nbsp;1 = Deceased</b></span></div></div><div class="cohort-stats"><div><strong>4</strong><span>feature groups</span></div><div><strong>5</strong><span>saved pipelines</span></div><div><strong>1,936</strong><span>integrated features</span></div></div></div>
+      <div class="omics-feature-grid" aria-label="Multi-omics feature groups">
+        <article class="omics-feature-card"><span class="omics-feature-mark">CNV</span><div><h3>Copy Number Variation</h3><p>Genomic copy-number features</p></div></article>
+        <article class="omics-feature-card"><span class="omics-feature-mark rna-mark">RNA</span><div><h3>RNA Expression</h3><p>Transcriptomic feature group</p></div></article>
+        <article class="omics-feature-card"><span class="omics-feature-mark mutation-mark">MUT</span><div><h3>Mutation</h3><p>Mutation feature group</p></div></article>
+        <article class="omics-feature-card"><span class="omics-feature-mark protein-mark">PRO</span><div><h3>Protein</h3><p>Protein feature group</p></div></article>
+      </div>
+      <div class="omics-workspace">
+        <div class="panel omics-form"><div class="panel-heading"><div><span class="step">MODEL SCOPE</span><h3>Select a saved pipeline</h3></div></div><label class="field-label" for="omics-scope">FEATURE GROUP / MODEL</label><select id="omics-scope" class="wide-select"><option value="integrated">Integrated four-omics · Random Forest</option><option value="rna">RNA · Random Forest (CV selected winner)</option><option value="cnv">CNV · Logistic Regression</option><option value="mutation">Mutation · Logistic Regression</option><option value="protein">Protein · Random Forest</option></select>
+          <label class="omics-drop" for="omics-file"><input id="omics-file" type="file" accept=".csv"><span class="csv-icon">CSV</span><span><strong id="omics-file-label">Select a feature CSV</strong><small id="omics-file-hint">Expected columns are checked from the chosen model metadata.</small></span><span class="browse-link">Browse</span></label>
+          <button class="button dark full" id="predict-omics" disabled>Run outcome analysis <span>→</span></button><div class="inline-status" id="omics-status" aria-live="polite"></div>
+          <div class="schema-note"><span>✓</span><p>Missing required features are rejected. No assay values are fabricated. Rows with partial missingness are passed to the model's saved imputer.</p></div>
+        </div>
+        <div class="panel omics-results"><div class="panel-heading"><div><span class="step">MODEL OUTPUT</span><h3>Analysis status</h3></div><span class="status-chip">EXPLORATORY</span></div>
+          <div id="omics-empty" class="empty-result"><div class="empty-icon molecule-icon">⌘</div><strong>No analysis run yet</strong><span>Upload a feature table to see prediction summaries and saved model evaluation.</span></div>
+          <div id="omics-result" class="hidden"></div>
+        </div>
+      </div>
+      <section id="omics-dashboard" class="omics-dashboard hidden" aria-live="polite">
+        <div class="omics-dashboard-heading"><div><span class="step">COMPLETED ANALYSIS</span><h3>Prediction dashboard</h3><p id="omics-dashboard-caption">Predictions from the selected saved pipeline.</p></div><div class="omics-downloads"><button class="report-button" id="download-omics-csv" type="button">Download Predictions CSV</button><button class="report-button" id="download-omics-pdf" type="button">Download Detailed Analysis PDF</button></div></div>
+        <div id="omics-summary-cards" class="omics-summary-cards"></div>
+        <div class="omics-dashboard-grid">
+          <article class="panel omics-chart-card"><div class="panel-heading"><div><span class="step">PREDICTION SUMMARY</span><h3>Predicted status distribution</h3></div></div><div id="omics-distribution" class="omics-distribution"></div></article>
+          <article class="panel omics-input-card"><div class="panel-heading"><div><span class="step">INPUT VALIDATION</span><h3>Uploaded data</h3></div></div><div id="omics-input-information" class="omics-info-list"></div></article>
+        </div>
+        <article class="panel omics-model-card"><div class="panel-heading"><div><span class="step">SAVED PIPELINE</span><h3>Model information</h3></div></div><div id="omics-model-information" class="omics-model-grid"></div></article>
+        <article id="omics-performance" class="panel omics-performance-card"><div class="panel-heading"><div><span class="step">HISTORICAL HELD-OUT TEST · N=141</span><h3>Model Performance</h3><p>Saved evaluation results for the selected checkpoint. These are not measurements on the newly uploaded samples.</p></div><span class="historical-banner">HISTORICAL EVALUATION</span></div><div id="omics-performance-metrics" class="omics-performance-metrics"></div><div id="omics-confusion-matrix" class="confusion-matrix"></div></article>
+        <article class="panel omics-table-card"><div class="panel-heading omics-table-heading"><div><span class="step">SAMPLE-LEVEL OUTPUT</span><h3>Detailed predictions</h3><p>Scores are model outputs, not calibrated clinical risk estimates.</p></div><label class="omics-search-label" for="omics-table-search">Search samples<input id="omics-table-search" type="search" placeholder="Search identifier or status"></label></div><div class="table-scroll"><table class="table-results omics-detail-table"><thead><tr><th><button type="button" data-omics-sort="sample">SAMPLE IDENTIFIER</button></th><th><button type="button" data-omics-sort="predicted_class">PREDICTED VITAL STATUS</button></th><th><button type="button" data-omics-sort="alive">ALIVE PROBABILITY</button></th><th><button type="button" data-omics-sort="deceased">DECEASED PROBABILITY</button></th><th><button type="button" data-omics-sort="difference">PROBABILITY DIFFERENCE</button></th></tr></thead><tbody id="omics-table-body"></tbody></table></div><div class="omics-pagination"><span id="omics-table-count"></span><div><button id="omics-previous-page" type="button">Previous</button><button id="omics-next-page" type="button">Next</button></div></div></article>
+        <div class="omics-interpretation"><span class="step">INTERPRETATION AND LIMITATIONS</span><p id="omics-interpretation-text"></p><small id="omics-disclaimer"></small></div>
+      </section>
+      <div class="metric-wrap"><div class="metric-title"><span class="step">SAVED HELD-OUT TEST · N=141</span><strong>Model Performance</strong><small>Historical evaluation is separate from uploaded CSV predictions. Accuracy is not calculated on prediction-only samples.</small></div><div class="table-scroll"><table id="omics-metrics"><thead><tr><th>Feature group / model</th><th>Accuracy</th><th>Bal. accuracy</th><th>Deceased recall</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead><tbody><tr><td colspan="6">Loading saved results…</td></tr></tbody></table></div></div>
+    </section>
+
+    <section id="research" class="research-notes"><div class="research-heading"><div class="eyebrow">RESEARCH &amp; METHODOLOGY</div><h2>Evidence with context.<br><em>Limitations in view.</em></h2><p>Two independent model workflows. Separate datasets, targets and evaluation histories.</p></div><div class="notes-grid"><article><span>01 / IMAGING</span><h3>Supported inference</h3><p>Ultrasound and histopathology use preserved ResNet-18 checkpoints. Modality verification gates classifier access; chest X-ray remains excluded from live inference.</p></article><article><span>02 / MULTI-OMICS</span><h3>Recorded status task</h3><p>The molecular pipeline predicts Dataset C recorded vital status labels: 0 = Alive and 1 = Deceased. It does not predict survival time.</p></article><article><span>03 / INTERPRETATION</span><h3>Research use only</h3><p>These independent analyses are exploratory and are not clinically validated. Outputs are not medical advice or a clinical diagnosis.</p></article></div></section>
+    <section id="about" class="about-project"><div><div class="eyebrow">ABOUT PROJECT</div><h2>OncoLens Research Platform</h2><p>An educational workspace for exploring saved medical imaging classifiers and multi-omics prediction pipelines. Each module preserves its original model and evaluation context.</p></div><a class="about-link" href="/api/health" target="_blank" rel="noreferrer">View service status <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-mark">+</span><span>Onco<span class="brand-light">Lens</span><small>RESEARCH PLATFORM</small></span></a><span>AI-DRIVEN BREAST CANCER RESEARCH</span><a href="#about">About Project</a></footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
